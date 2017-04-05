@@ -14,7 +14,7 @@ function SwapPicks(game, standing)
 	end
 	
 	-- only with 2 players
-	if (n != 2) then 
+	if (n ~= 2) then 
 		return 
 	end
 	
