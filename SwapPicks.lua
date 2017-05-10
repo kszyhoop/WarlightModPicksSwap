@@ -12,17 +12,20 @@ function SwapPicks(game, standing)
 		playersTable[n] = key
 		n = n + 1;
 	end
-	
-	-- only with 2 players
-	if (n ~= 2) then 
-		return 
-	end
-	
 	for _, territory in pairs(standing.Territories) do
-		if (territory.OwnerPlayerID == playersTable[0]) then 
-			territory.OwnerPlayerID = playersTable[1] 
-		elseif (territory.OwnerPlayerID == playersTable[1]) then
-			territory.OwnerPlayerID = playersTable[0] 
+		local x=0;
+		while(x<n)do
+			if(territory.OwnerPlayerID == playerTable[x])then
+				if(x==0)then
+					territory.OwnerPlayerID = playersTable[n-1];
+				else
+					if(x==n-1)then
+						territory.OwnerPlayerID = territory.OwnerPlayerID[0];
+					else
+						territory.OwnerPlayerID = playersTable[x+1];
+					end
+				end
+			end
 		end
 	end
 end
