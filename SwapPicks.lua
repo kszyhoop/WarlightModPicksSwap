@@ -26,6 +26,7 @@ function SwapPicks(game, standing)
 					end
 				end
 			end
+			x=x+1;
 		end
 	end
 end
