@@ -37,9 +37,8 @@ function swapSpecialUnits(territory, newPlayer)
 	local array = {};
 	for _, unit in pairs(territory.NumArmies.SpecialUnits) do
 		table.insert(array, getNewUnit(unit, newPlayer))
-		print(array[#array])
 	end
-	territory.NumArmies = territory.NumArmies.Subtract(0, territory.NumArmies.SpecialUnits).Add(0, array)
+	territory.NumArmies = territory.NumArmies.Subtract(0, territory.NumArmies.SpecialUnits)
 	territory.NumArmies = territory.NumArmies.Add(0, array)
 end
 
