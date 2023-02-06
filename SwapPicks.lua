@@ -21,18 +21,18 @@ function SwapPicks(game, standing)
 	for _, territory in pairs(standing.Territories) do
 		if (territory.OwnerPlayerID == playersTable[0]) then 
 			territory.OwnerPlayerID = playersTable[1]
---[[			if #territory.NumArmies.SpecialUnits >= 0 then
+			if #territory.NumArmies.SpecialUnits >= 0 then
 				swapSpecialUnits(territory, playersTable[1])
-			end		]]--
+			end		
 		elseif (territory.OwnerPlayerID == playersTable[1]) then
 			territory.OwnerPlayerID = playersTable[0]
---[[			if #territory.NumArmies.SpecialUnits >= 0 then
+			if #territory.NumArmies.SpecialUnits >= 0 then
 				swapSpecialUnits(territory, playersTable[0])
-			end		]]--
+			end		
 		end
 	end
 end
---[[
+
 function swapSpecialUnits(territory, newPlayer)
 	local array = {};
 	for _, unit in pairs(territory.NumArmies.SpecialUnits) do
@@ -58,4 +58,4 @@ function getNewUnit(unit, player)
 		return WL.Boss4.Create(player)
 	end
 end
-]]--
+
